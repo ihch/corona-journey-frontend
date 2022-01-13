@@ -14,6 +14,11 @@ export const handlers = [
                 patients: 10,
                 total_patients: 100,
               },
+              {
+                date: "2020-04-03",
+                patients: 13,
+                total_patients: 113,
+              },
             ],
           },
           {
@@ -23,6 +28,11 @@ export const handlers = [
                 date: "2020-04-01",
                 patients: 7,
                 total_patients: 80,
+              },
+              {
+                date: "2020-04-03",
+                patients: 9,
+                total_patients: 89,
               },
             ],
           },
