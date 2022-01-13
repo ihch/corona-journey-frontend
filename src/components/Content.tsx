@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Prefecture, usePrefectures, useSearch } from '../uses';
 import Button from './Button';
+import InfectedInformationCard from './InfectedInformationCard';
 import SelectPrefectures from './SelectPrefectures';
 
 type ContentProps = {};
@@ -41,14 +42,10 @@ const Content: React.VFC<ContentProps> = () => {
             <>
               {index !== 0 && (
                 // I want to change arrow to svg icon.
-                <p className='mt-4 text-center text-2xl font-extrabold text-cyan-700'>↓</p>
+                <p className='mt-4 text-center text-2xl font-extrabold text-cyan-700' key={`separator-${index}`}>↓</p>
               )}
-              <div className='mt-4 first:mt-0 border-2 border-gray-300 rounded-lg'>
-                <h3 className='text-2xl text-gray-700 font-semibold px-4 py-2 border-b-2 border-gray-300'>{prefecture}</h3>
-                <div className='p-4'>
-                  <p className='text-lg font-semibold text-gray-700'>今日までの感染者数：{infected_persons[infected_persons.length - 1].total_patients}</p>
-                  <p className='text-lg font-semibold text-gray-700 mt-2'>前日の{prefecture}の感染者数は{infected_persons[infected_persons.length - 1].patients}人でした。</p>
-                </div>
+              <div className='mt-4 first:mt-0' key={prefecture}>
+                <InfectedInformationCard prefecture={prefecture} infectedPersons={infected_persons} />
               </div>
             </>
           ))}
