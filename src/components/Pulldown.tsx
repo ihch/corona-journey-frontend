@@ -24,7 +24,7 @@ const Pulldown: React.VFC<PulldownProps> = ({ items, placeholder = '選択して
     <Listbox value={selected} onChange={setSelected}>
       <div className='relative w-full'>
         <Listbox.Button
-          className="w-full text-gray-800 text-xl font-bold px-10 py-2 border-2 rounded-lg hover:border-teal-300"
+          className="w-full text-gray-700 text-xl font-bold px-10 py-2 border-2 rounded-lg hover:border-teal-300"
         >
           {selected?.name || placeholder} {!selected ? '👇' : '👍'}
         </Listbox.Button>
