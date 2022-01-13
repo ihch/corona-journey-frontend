@@ -1,4 +1,6 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
+import { IconContext } from 'react-icons';
+import { MdOutlineDoubleArrow } from 'react-icons/md';
 import { Prefecture, usePrefectures, useSearch } from '../uses';
 import Button from './Button';
 import InfectedInformationCard from './InfectedInformationCard';
@@ -21,7 +23,7 @@ const Content: React.VFC<ContentProps> = () => {
 
   return (
     <div className='w-4/5 mx-auto my-8 shadow-[0_10px_20px_10px_rgba(0,0,0,0.1)]'>
-      <div className='min-h-screen py-10 px-6'>
+      <div className=' py-10 px-6'>
         <h2 className='text-3xl text-gray-700 font-bold'>目的地を選ぶ</h2>
         <div className='mt-8'>
           <SelectPrefectures
@@ -41,8 +43,9 @@ const Content: React.VFC<ContentProps> = () => {
           {data && data.prefectures.map(({ prefecture, infected_persons }, index) => (
             <>
               {index !== 0 && (
-                // I want to change arrow to svg icon.
-                <p className='mt-4 text-center text-2xl font-extrabold text-cyan-700' key={`separator-${index}`}>↓</p>
+                <IconContext.Provider value={{ color: 'rgb(14, 116, 144)', size: '40px' }}>
+                  <MdOutlineDoubleArrow className='mx-auto mt-4 rotate-90' />
+                </IconContext.Provider>
               )}
               <div className='mt-4 first:mt-0' key={prefecture}>
                 <InfectedInformationCard prefecture={prefecture} infectedPersons={infected_persons} />
