@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [prefectures, setPrefectures] = useState([]);
+
+  useEffect(() => {
+    const f = () => {
+      fetch("/prefectures")
+        .then((response) => {
+          return response.json();
+        })
+        .then((value) => setPrefectures(value));
+    };
+
+    f();
+  }, []);
+
+  useEffect(() => {
+    console.log(prefectures);
+  }, [prefectures]);
+
   return (
     <div className="App">
       <header className="App-header">
