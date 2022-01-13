@@ -20,14 +20,16 @@ export const usePrefectures = () => {
   return prefectures;
 }
 
+export type InfectedPerson = {
+  date: string;
+  patients: number;
+  total_patients: number;
+};
+
 type SearchResponse = {
   prefectures: {
     prefecture: string;
-    infected_persons: {
-      date: string;
-      patients: number;
-      total_patients: number;
-    }[];
+    infected_persons: InfectedPerson[];
   }[];
 };
 
