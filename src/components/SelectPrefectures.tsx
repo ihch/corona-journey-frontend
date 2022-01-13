@@ -13,7 +13,7 @@ const SelectPrefectures: React.VFC<SelectPrefecturesProps> = ({
   onChangeDestination
 }) => {
   return (
-    <div className='flex items-center mt-8'>
+    <div className='flex items-center'>
       <Pulldown items={prefectures} placeholder='出発地' onChange={onChangeDeparture} />
       <span className='text-4xl leading-none inline-block align-middle mx-2'>-</span>
       <Pulldown items={prefectures} placeholder='目的地' onChange={onChangeDestination} />
