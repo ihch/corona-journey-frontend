@@ -29,7 +29,7 @@ const Pulldown: React.VFC<PulldownProps> = ({ items, placeholder = '選択して
           {selected?.name || placeholder} {!selected ? '👇' : '👍'}
         </Listbox.Button>
         <Listbox.Options
-          className='w-full max-h-80 overflow-y-auto absolute bottom-0 left-0 translate-y-full border-2 rounded-lg'
+          className='w-full max-h-80 overflow-y-auto absolute bottom-0 left-0 translate-y-full border-2 rounded-lg bg-white'
         >
           {items.map((item) => (
             <Listbox.Option
