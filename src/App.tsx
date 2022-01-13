@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Header from './components/Header';
+import Content from './components/Content';
 
 function App() {
   const [prefectures, setPrefectures] = useState([]);
@@ -21,7 +23,8 @@ function App() {
 
   return (
     <div className="App">
-      hello
+      <Header />
+      <Content />
     </div>
   );
 }
