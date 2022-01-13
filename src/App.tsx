@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from './components/Header';
 import Content from './components/Content';
+import Footer from './components/Footer';
 
 function App() {
   const [prefectures, setPrefectures] = useState([]);
@@ -25,6 +26,7 @@ function App() {
     <div className="App">
       <Header />
       <Content />
+      <Footer />
     </div>
   );
 }
