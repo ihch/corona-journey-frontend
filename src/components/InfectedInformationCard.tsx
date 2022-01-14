@@ -42,7 +42,7 @@ const InfectedInformationCard: React.VFC<InfectedInformationCardProps> = ({
     labels,
     datasets: [
       {
-        label: `直近一週間の${prefecture}の感染者数推移`,
+        label: `直近一週間の${prefecture}の新規感染者数推移`,
         data,
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
