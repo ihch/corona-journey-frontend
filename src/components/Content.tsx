@@ -21,11 +21,9 @@ const Content: React.VFC<ContentProps> = () => {
 
   const [departure, setDeparture] = useState<Prefecture>({
     prefecture: "",
-    total_patients: 0,
   });
   const [destination, setDestination] = useState<Prefecture>({
     prefecture: "",
-    total_patients: 0,
   });
   const { data, search } = useSearch();
 
