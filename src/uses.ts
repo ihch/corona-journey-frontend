@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const API_ENDPOINT = process.env.API_ENDPOINT || '';
+const REACT_APP_API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT || '';
 
 export type Prefecture = {
   prefecture: string;
@@ -12,7 +12,7 @@ export const usePrefectures = () => {
 
   useEffect(() => {
     const f = async () => {
-      const response = await fetch(API_ENDPOINT + "/prefectures");
+      const response = await fetch(REACT_APP_API_ENDPOINT + "/prefectures");
       const data = await response.json();
       setPrefectures(data.prefectures);
     };
@@ -36,11 +36,10 @@ type SearchResponse = {
 };
 
 export const useSearch = () => {
-  console.log('API_ENDPOINT', API_ENDPOINT);
   const [data, setData] = useState<SearchResponse>();
   const f = async (departure: string, destination: string) => {
     const response = await fetch(
-      API_ENDPOINT + `/search?departure=${departure}&destination=${destination}`,
+      REACT_APP_API_ENDPOINT + `/search?departure=${departure}&destination=${destination}`,
       {
         method: "GET",
         mode: "cors",
