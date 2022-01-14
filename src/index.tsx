@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { worker } from './mocks/browser';
+// import { worker } from './mocks/browser';
 import reportWebVitals from './reportWebVitals';
 
-worker.start();
+// worker.start();
 
 ReactDOM.render(
   <React.StrictMode>
