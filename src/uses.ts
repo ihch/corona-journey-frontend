@@ -36,6 +36,7 @@ type SearchResponse = {
 };
 
 export const useSearch = () => {
+  console.log('API_ENDPOINT', API_ENDPOINT);
   const [data, setData] = useState<SearchResponse>();
   const f = async (departure: string, destination: string) => {
     const response = await fetch(
