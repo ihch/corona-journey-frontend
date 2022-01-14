@@ -1,7 +1,9 @@
 import { rest } from "msw";
 
+const API_ENDPOINT = process.env.API_ENDPOINT || '';
+
 export const handlers = [
-  rest.get("/search", (_, res, ctx) => {
+  rest.get(API_ENDPOINT + "/search", (_, res, ctx) => {
     return res(
       ctx.status(200),
       ctx.json({
